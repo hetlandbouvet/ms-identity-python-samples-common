@@ -193,6 +193,8 @@ class IdentityWebPython(object):
                 id_context.username = id_context._id_token_claims.get('name', 'anonymous')
             if 'access_token' in result:
                 id_context._access_token = result['access_token']
+            id_context._id_token = result['id_token']  # Added by pkhetland
+
             id_context.has_changed = True                                   #TODO: update id_context to automatically do this when _id_token and accesstoken is assigned!!!!
             id_context.token_cache = token_cache
         else:
